@@ -6,7 +6,7 @@ import { useLoginMutation } from "../../store/slice/apiSlice";
 import { useNavigate } from "react-router-dom";
 
 const validationScheme = Yup.object().shape({
-  userName: Yup.string().required("User name is required"),
+  username: Yup.string().required("User name is required"),
   password: Yup.string()
     .min(6, "Password must be at least 6 characters long")
     .required("Password is required"),
@@ -54,7 +54,7 @@ const LoginPage = () => {
             placeholder="Enter username"
             value={formik.values.username}
             onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
+            onBlur={formik.handleBlur}
           />
           {formik.touched.username && formik.errors.username ? (
             <label className="error">{formik.errors.username}</label>
@@ -65,7 +65,7 @@ const LoginPage = () => {
             placeholder="Enter password"
             value={formik.values.password}
             onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
+            onBlur={formik.handleBlur}
           />
           {formik.touched.password && formik.errors.password ? (
             <label className="error">{formik.errors.password}</label>
